@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ScreenDesign2</string>
+    <string name="east_iraq">East Iraq</string>
+    <string name="north_iraq">North Iraq</string>
+    <string name="south_iraq">South Iraq</string>
+    <string name="west_iraq">West iraq</string>
 </resources>

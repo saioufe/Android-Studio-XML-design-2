@@ -75,10 +75,114 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/first_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.02"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/east_iraq"
+                android:textColor="@color/top_taps"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
+            <ImageView
+                android:id="@+id/first_shape"
+                android:visibility="invisible"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/button_circle_shape"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/second_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.02"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/west_iraq"
+                android:textColor="@color/top_taps"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
+            <ImageView
+                android:id="@+id/second_shape"
+                android:visibility="invisible"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/button_circle_shape"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/third_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.02"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/north_iraq"
+                android:textColor="@color/top_taps"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
+            <ImageView
+                android:id="@+id/third_shape"
+                android:visibility="invisible"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/button_circle_shape"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/fourth_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.02"
+                style="?android:attr/buttonBarButtonStyle"
+                android:text="@string/south_iraq"
+                android:textColor="@color/top_taps"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
+            <ImageView
+                android:id="@+id/fourth_shape"
+                android:visibility="invisible"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/button_circle_shape"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+
+
 
     </LinearLayout>
 
