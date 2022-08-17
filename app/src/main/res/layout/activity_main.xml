@@ -66,6 +66,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/roboto_medium"
         android:text="Top Places In IRAQ"
+        android:textColor="@color/title_color"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +74,7 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -86,73 +88,81 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/first_button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:fontFamily="sans-serif-black"
                 android:letterSpacing="0.02"
-                style="?android:attr/buttonBarButtonStyle"
                 android:text="@string/east_iraq"
-                android:textColor="@color/top_taps"
                 android:textAllCaps="false"
+                android:textColor="@color/top_taps"
                 android:textSize="12dp" />
+
             <ImageView
                 android:id="@+id/first_shape"
-                android:visibility="invisible"
                 android:layout_width="7dp"
                 android:layout_height="7dp"
+                android:layout_gravity="center"
                 android:background="@drawable/button_circle_shape"
-                android:layout_gravity="center"/>
+                android:visibility="invisible" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/second_button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:fontFamily="sans-serif-black"
                 android:letterSpacing="0.02"
-                style="?android:attr/buttonBarButtonStyle"
                 android:text="@string/west_iraq"
-                android:textColor="@color/top_taps"
                 android:textAllCaps="false"
+                android:textColor="@color/top_taps"
                 android:textSize="12dp" />
+
             <ImageView
                 android:id="@+id/second_shape"
-                android:visibility="invisible"
                 android:layout_width="7dp"
                 android:layout_height="7dp"
+                android:layout_gravity="center"
                 android:background="@drawable/button_circle_shape"
-                android:layout_gravity="center"/>
+                android:visibility="invisible" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/third_button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:fontFamily="sans-serif-black"
                 android:letterSpacing="0.02"
-                style="?android:attr/buttonBarButtonStyle"
                 android:text="@string/north_iraq"
-                android:textColor="@color/top_taps"
                 android:textAllCaps="false"
+                android:textColor="@color/top_taps"
                 android:textSize="12dp" />
+
             <ImageView
                 android:id="@+id/third_shape"
-                android:visibility="invisible"
                 android:layout_width="7dp"
                 android:layout_height="7dp"
+                android:layout_gravity="center"
                 android:background="@drawable/button_circle_shape"
-                android:layout_gravity="center"/>
+                android:visibility="invisible" />
         </LinearLayout>
 
 
@@ -160,30 +170,66 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/fourth_button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:fontFamily="sans-serif-black"
                 android:letterSpacing="0.02"
-                style="?android:attr/buttonBarButtonStyle"
                 android:text="@string/south_iraq"
-                android:textColor="@color/top_taps"
                 android:textAllCaps="false"
+                android:textColor="@color/top_taps"
                 android:textSize="12dp" />
+
             <ImageView
                 android:id="@+id/fourth_shape"
-                android:visibility="invisible"
                 android:layout_width="7dp"
                 android:layout_height="7dp"
+                android:layout_gravity="center"
                 android:background="@drawable/button_circle_shape"
-                android:layout_gravity="center"/>
+                android:visibility="invisible" />
         </LinearLayout>
-
-
 
 
     </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager_slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/category_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/title_color"
+        android:text="Categories"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

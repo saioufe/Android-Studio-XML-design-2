@@ -2,10 +2,13 @@ package com.example.screendesign2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.screendesign2.adapters.SliderPageAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +21,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // creating object of ViewPager
+        ViewPager2 mViewPager;
+
+        // images array
+        int[] images = {R.drawable.app_image1, R.drawable.app_image2, R.drawable.app_image3};
+
+        // Creating Object of ViewPagerAdapter
+        SliderPageAdapter sliderPageAdapter;
+
 
         Toolbar toolbar = findViewById(R.id.main_toolbar);
         toolbar.setTitle("");
         toolbar.setBackgroundColor(getResources().getColor(R.color.white , getResources().newTheme()));
         setSupportActionBar(toolbar);
+
+        // Initializing the ViewPager Object
+        mViewPager = (ViewPager2) findViewById(R.id.pager_slider);
+
+        // Initializing the ViewPagerAdapter
+        sliderPageAdapter = new SliderPageAdapter(MainActivity.this, images);
+
+        // Adding the Adapter to the ViewPager
+        mViewPager.setAdapter(sliderPageAdapter);
 
         List<View> shapes = new ArrayList<>();
 
