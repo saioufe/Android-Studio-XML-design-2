@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.screendesign2.adapters.SliderPageAdapter;
+import com.example.screendesign2.data.Slider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +25,13 @@ public class MainActivity extends AppCompatActivity {
         // creating object of ViewPager
         ViewPager2 mViewPager;
 
-        // images array
-        int[] images = {R.drawable.app_image1, R.drawable.app_image2, R.drawable.app_image3};
+        // sliders array
+
+        List<Slider> sliders = new ArrayList<Slider>();
+        sliders.add(new Slider(R.drawable.app_image1 , "Baghdad Tower" , "Larges tower in baghdad"));
+        sliders.add(new Slider(R.drawable.app_image2 , "Central Bank of Baghdad" , "Illustration image for the bank"));
+        sliders.add(new Slider(R.drawable.app_image3 , "Zoha Hadded Design" , "The first design for Zoha"));
+
 
         // Creating Object of ViewPagerAdapter
         SliderPageAdapter sliderPageAdapter;
@@ -40,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = (ViewPager2) findViewById(R.id.pager_slider);
 
         // Initializing the ViewPagerAdapter
-        sliderPageAdapter = new SliderPageAdapter(MainActivity.this, images);
+        sliderPageAdapter = new SliderPageAdapter(MainActivity.this, sliders);
 
         // Adding the Adapter to the ViewPager
         mViewPager.setAdapter(sliderPageAdapter);
