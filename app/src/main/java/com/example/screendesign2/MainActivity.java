@@ -2,11 +2,14 @@ package com.example.screendesign2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.screendesign2.adapters.SliderPageAdapter;
 import com.example.screendesign2.data.Slider;
@@ -17,10 +20,17 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    LinearLayout sliderDotspanel;
+    private int dotscount;
+    private ImageView[] dots;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sliderDotspanel = (LinearLayout) findViewById(R.id.SliderDots);
 
         // creating object of ViewPager
         ViewPager2 mViewPager;
@@ -50,6 +60,49 @@ public class MainActivity extends AppCompatActivity {
 
         // Adding the Adapter to the ViewPager
         mViewPager.setAdapter(sliderPageAdapter);
+
+        dotscount = sliders.size();
+        dots = new ImageView[dotscount];
+
+        for(int i = 0; i < dotscount; i++){
+
+            dots[i] = new ImageView(this);
+            dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.non_active_slider_dot));
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            params.setMargins(4, 5, 4, 5);
+
+            sliderDotspanel.addView(dots[i], params);
+
+        }
+
+        dots[0].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_slider_dot));
+
+        mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+
+                for(int i = 0; i< dotscount; i++){
+                    dots[i].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.non_active_slider_dot));
+                }
+
+                dots[position].setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.active_slider_dot));
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                super.onPageScrollStateChanged(state);
+            }
+        });
+
 
         List<View> shapes = new ArrayList<>();
 
@@ -94,6 +147,9 @@ public class MainActivity extends AppCompatActivity {
             visiableShape.set(view);
             turnOfTheOthers(shapes , shape4);
         });
+
+
+
 
 
     }

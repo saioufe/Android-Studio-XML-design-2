@@ -217,6 +217,16 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
     </androidx.cardview.widget.CardView>
 
+    <LinearLayout
+        android:id="@+id/SliderDots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/category_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
         android:id="@+id/category_text"
@@ -249,7 +259,7 @@
             android:layout_margin="8dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="6dp">
+            app:cardElevation="3dp">>
 
             <ImageView
                 android:layout_width="80dp"
@@ -257,7 +267,7 @@
                 android:layout_gravity="center"
                 android:padding="15dp"
                 android:src="@drawable/ic_plane"
-                app:tint="@color/blue" />
+                app:tint="@color/green_mody" />
         </androidx.cardview.widget.CardView>
 
 
@@ -267,7 +277,7 @@
             android:layout_margin="8dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="6dp">
+            app:cardElevation="3dp">>
 
             <ImageView
                 android:layout_width="80dp"
@@ -285,7 +295,7 @@
             android:layout_margin="8dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="6dp">
+            app:cardElevation="3dp">
 
             <ImageView
                 android:layout_width="80dp"
@@ -303,8 +313,7 @@
             android:layout_margin="8dp"
             android:layout_weight="1"
             app:cardCornerRadius="20dp"
-            app:cardElevation="6dp"
-
+            app:cardElevation="3dp">
             >
 
             <ImageView
