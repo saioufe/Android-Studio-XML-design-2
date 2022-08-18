@@ -5,12 +5,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.screendesign2.adapters.PressedPageAdapter;
 import com.example.screendesign2.adapters.SliderPageAdapter;
 import com.example.screendesign2.data.Slider;
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         // creating object of ViewPager
         ViewPager2 mViewPager;
 
+
+
         // sliders array
 
         List<Slider> sliders = new ArrayList<Slider>();
@@ -43,8 +47,15 @@ public class MainActivity extends AppCompatActivity {
         sliders.add(new Slider(R.drawable.app_image3 , "Zoha Hadded Design" , "The first design for Zoha"));
 
 
+        List<Integer> imagesSliders = new ArrayList<Integer>();
+        imagesSliders.add(R.drawable.app_image1);
+        imagesSliders.add( R.drawable.app_image2);
+        imagesSliders.add(R.drawable.app_image3);
+
+
         // Creating Object of ViewPagerAdapter
         SliderPageAdapter sliderPageAdapter;
+        PressedPageAdapter pressedPageAdapter;
 
 
         Toolbar toolbar = findViewById(R.id.main_toolbar);
@@ -55,11 +66,16 @@ public class MainActivity extends AppCompatActivity {
         // Initializing the ViewPager Object
         mViewPager = (ViewPager2) findViewById(R.id.pager_slider);
 
+
         // Initializing the ViewPagerAdapter
         sliderPageAdapter = new SliderPageAdapter(MainActivity.this, sliders);
 
+
+
         // Adding the Adapter to the ViewPager
         mViewPager.setAdapter(sliderPageAdapter);
+
+
 
         dotscount = sliders.size();
         dots = new ImageView[dotscount];
@@ -81,11 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
-            }
-
-            @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
 
@@ -97,11 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                super.onPageScrollStateChanged(state);
-            }
         });
+
 
 
         List<View> shapes = new ArrayList<>();
@@ -136,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             shape2.setVisibility(View.VISIBLE);
             visiableShape.set(view);
             turnOfTheOthers(shapes , shape2);
+            startActivity(new Intent(this, PressedActivity.class));
         });
         button3.setOnClickListener(view -> {
             shape3.setVisibility(View.VISIBLE);

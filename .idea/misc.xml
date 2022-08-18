@@ -4,15 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.2851851851851852" />
+        <entry key="app/src/main/res/drawable/active_pressed_slider.xml" value="0.154" />
         <entry key="app/src/main/res/drawable/active_slider_dot.xml" value="0.154" />
         <entry key="app/src/main/res/drawable/button_circle_shape.xml" value="0.154" />
+        <entry key="app/src/main/res/drawable/gradient_pressed_image_shape.xml" value="0.154" />
+        <entry key="app/src/main/res/drawable/non_active_pressed_slider.xml" value="0.154" />
         <entry key="app/src/main/res/drawable/non_active_slider_dot.xml" value="0.154" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2213363647460938" />
+        <entry key="app/src/main/res/layout/activity_pressed.xml" value="0.24354248046875" />
+        <entry key="app/src/main/res/layout/pressed_image_view.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/layout/slider_image_view.xml" value="0.21089630126953127" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

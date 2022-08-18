@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+    <!-- image viwer to view the images -->
+    <ImageView
+        android:id="@+id/pressedImageView"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:foreground="@drawable/gradient_pressed_image_shape"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="trans_white">#60FFFFFF</color>
     <color name="background">#F6F7F9</color>
     <color name="red">#E32426</color>
     <color name="buttons_icons">#a6a7a8</color>
@@ -17,4 +18,5 @@
     <color name="yellow">#f3c74a</color>
     <color name="red_light">#eb8f91</color>
     <color name="slider_indecator">#e3e6e5</color>
+    <color name="trans_black">#20000000</color>
 </resources>
