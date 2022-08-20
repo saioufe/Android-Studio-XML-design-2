@@ -34,7 +34,6 @@ public class PressedActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         messageFromIntent = intent.getStringExtra("Title");
-
         mainText.setText("Discover "+messageFromIntent);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
