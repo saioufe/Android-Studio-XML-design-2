@@ -138,23 +138,37 @@ public class MainActivity extends AppCompatActivity {
             shape1.setVisibility(View.VISIBLE);
             visiableShape.set(view);
             turnOfTheOthers(shapes , shape1);
-
+            Intent intent = new Intent(this , PressedActivity.class);
+            String message = "East Iraq";
+            intent.putExtra("Title" , message);
+            startActivity(intent);
         });
         button2.setOnClickListener(view -> {
             shape2.setVisibility(View.VISIBLE);
             visiableShape.set(view);
             turnOfTheOthers(shapes , shape2);
-            startActivity(new Intent(this, PressedActivity.class));
+            Intent intent = new Intent(this , PressedActivity.class);
+            String message = "West Iraq";
+            intent.putExtra("Title" , message);
+            startActivity(intent);
         });
         button3.setOnClickListener(view -> {
             shape3.setVisibility(View.VISIBLE);
             visiableShape.set(view);
             turnOfTheOthers(shapes , shape3);
+            Intent intent = new Intent(this , PressedActivity.class);
+            String message = "North Iraq";
+            intent.putExtra("Title" , message);
+            startActivity(intent);
         });
         button4.setOnClickListener(view -> {
             shape4.setVisibility(View.VISIBLE);
             visiableShape.set(view);
             turnOfTheOthers(shapes , shape4);
+            Intent intent = new Intent(this , PressedActivity.class);
+            String message = "South Iraq";
+            intent.putExtra("Title" , message);
+            startActivity(intent);
         });
 
 

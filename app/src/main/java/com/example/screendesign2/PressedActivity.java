@@ -5,11 +5,13 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.WindowCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.screendesign2.adapters.PressedPageAdapter;
 import com.example.screendesign2.adapters.SliderPageAdapter;
@@ -21,12 +23,19 @@ public class PressedActivity extends AppCompatActivity {
     LinearLayout sliderPressedDotspanel;
     private int dotscount;
     private ImageView[] dots;
+    private TextView mainText;
+    String messageFromIntent = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pressed);
 
+        mainText = findViewById(R.id.second_page_titles);
 
+        Intent intent = getIntent();
+        messageFromIntent = intent.getStringExtra("Title");
+
+        mainText.setText("Discover "+messageFromIntent);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
