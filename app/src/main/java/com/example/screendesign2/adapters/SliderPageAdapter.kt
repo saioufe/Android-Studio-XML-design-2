@@ -1,84 +1,59 @@
-package com.example.screendesign2.adapters;
+package com.example.screendesign2.adapters
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.content.Context
+import androidx.recyclerview.widget.RecyclerView
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.ImageView
+import com.example.screendesign2.R
+import android.widget.TextView
+import com.example.screendesign2.data.Slider
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.screendesign2.R;
-import com.example.screendesign2.data.Slider;
-
-
-import java.util.List;
-
-public class SliderPageAdapter extends RecyclerView.Adapter<SliderPageAdapter.ViewHolder> {
-    List<Slider> sliders;
-    Context context;
-
-
-    public SliderPageAdapter(Context context, List<Slider> sliders){
-        this.context = context;
-        this.sliders = sliders;
-    }
-
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
+class SliderPageAdapter(var context: Context, var sliders: List<Slider>) :
+    RecyclerView.Adapter<SliderPageAdapter.ViewHolder>() {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder {
+        val inflater = LayoutInflater.from(context)
 
         // Inflate the custom layout
-        View imageView = inflater.inflate(R.layout.slider_image_view, parent, false);
+        val imageView =
+            inflater.inflate(R.layout.slider_image_view, parent, false)
 
         // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(imageView);
-        return viewHolder;
+        return ViewHolder(imageView)
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        int image = sliders.get(position).getImage();
-        String title = sliders.get(position).getTitle();
-        String subTitle = sliders.get(position).getSubTitle();
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val image = sliders[position].image
+        val title = sliders[position].title
+        val subTitle = sliders[position].subTitle
 
         // Set item views based on your views and data model
-        ImageView imageView = holder.mainImage;
-        Drawable drawable = context.getResources().getDrawable(image);
-        imageView.setImageDrawable(drawable);
-
-        TextView mainTextTitle = holder.mainTextTitle;
-        mainTextTitle.setText(title);
-
-        TextView mainTextSubTitle = holder.mainTextSubTitle;
-        mainTextSubTitle.setText(subTitle);
-
-
+        val imageView = holder.mainImage
+        val drawable = context.resources.getDrawable(image)
+        imageView.setImageDrawable(drawable)
+        val mainTextTitle = holder.mainTextTitle
+        mainTextTitle.text = title
+        val mainTextSubTitle = holder.mainTextSubTitle
+        mainTextSubTitle.text = subTitle
     }
 
-    @Override
-    public int getItemCount() {
-        return sliders.size();
+    override fun getItemCount(): Int {
+        return sliders.size
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var mainImage: ImageView
+        var mainTextTitle: TextView
+        var mainTextSubTitle: TextView
 
-    public ImageView mainImage;
-    public TextView mainTextTitle;
-    public TextView mainTextSubTitle;
-
-
-    public ViewHolder(@NonNull View itemView) {
-        super(itemView);
-        mainImage = (ImageView) itemView.findViewById(R.id.imageViewMain);
-        mainTextTitle = (TextView) itemView.findViewById(R.id.textViewMain);
-        mainTextSubTitle = (TextView) itemView.findViewById(R.id.textViewSubTitle);
-
+        init {
+            mainImage = itemView.findViewById<View>(R.id.imageViewMain) as ImageView
+            mainTextTitle = itemView.findViewById<View>(R.id.textViewMain) as TextView
+            mainTextSubTitle = itemView.findViewById<View>(R.id.textViewSubTitle) as TextView
+        }
     }
-}
 }
